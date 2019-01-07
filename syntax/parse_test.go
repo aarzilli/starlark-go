@@ -236,6 +236,11 @@ pass`,
 		{`x = 1 \
 + 2`,
 			`(AssignStmt Op== LHS=x RHS=(BinaryExpr X=1 Op=+ Y=2))`},
+		{`def f(n):
+	if True:
+		print("hello world")
+		`,
+			``},
 	} {
 		f, err := syntax.Parse("foo.star", test.input, 0)
 		if err != nil {
